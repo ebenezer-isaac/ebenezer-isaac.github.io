@@ -27,7 +27,7 @@ session_start();
 date_default_timezone_set('Asia/Kolkata');
 echo "var serv_curr_time = " . time() . sprintf('%03d', (int) (explode(" ", microtime())[0] * 1000)) . ";";
 //echo "var start_time = " . (time() + 5) . "999;\n";
-echo "var start_time = " . strtotime("2019-11-29 20:35:00") . "000;\n";
+echo "var start_time = " . strtotime("2019-11-29 20:45:00") . "000;\n";
 echo "var questions = ";
 $fh = fopen('quiz_question.json', 'r');
 while ($line = fgets($fh)) {
