@@ -26,8 +26,8 @@ session_start();
 <?php
 date_default_timezone_set('Asia/Kolkata');
 echo "var serv_curr_time = " . time() . "000;\n";
-echo "var start_time = " . time() . "999;\n";
-//echo "var start_time = " . strtotime("2019-11-28 21:22:00") . "000;\n";
+//echo "var start_time = " . time() . "999;\n";
+echo "var start_time = " . strtotime("2019-11-29 14:10:00") . "000;\n";
 echo "var questions = ";
 $fh = fopen('question.json', 'r');
 while ($line = fgets($fh)) {
