@@ -21,7 +21,7 @@ session_start();
 
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="js/main.js" type="168b875311079e67a1884235-text/javascript"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="js/jquery.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script>
 <?php
