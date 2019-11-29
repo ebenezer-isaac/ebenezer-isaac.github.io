@@ -14,14 +14,12 @@ session_start();
         </style>
     </head>
     <body onload="loader()" class="limiter">
-
         <div id="mained" class="wrap-login100" style="vertical-align: middle;text-align: center;">
             <div id="content" class="wrapasdf" style="display: none;vertical-align: middle;"></div>
         </div>
-
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="js/main.js" type="168b875311079e67a1884235-text/javascript"></script>
-        <script src="js/jquery.min.js" type="168b875311079e67a1884235-text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script>
 <?php
@@ -130,12 +128,12 @@ fclose($fh);
                             + "<tr><td width='33%'><h6 class='mb-0'>Question : " + question + "/" + no_of_qus
                             + "</h6></td></tr></table>"
                             + "<h2 class='mb-3'>" + questions["" + question]["question"] + "</h2><div class='justify-content-center' id='timer_display'>--</div><br>"
-                            + "<table class = 'mb-5' width = '100%' align = 'left'>"
-                            + "<tr><td width = '20%'><input type='radio' value='a' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td width = '80%'>" + questions["" + question]["a"] + "</td></tr>"
-                            + "<tr><td><input type='radio' value='b' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["b"] + "</td></tr>"
-                            + "<tr><td><input type='radio' value='c' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["c"] + "</td></tr>"
-                            + "<tr><td><input type='radio' value='d' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["d"] + "</td></tr>"
-                            + "<tr><td><input type='radio' value='0' onclick='calScore(" + curr_qus_start + ")' name = 'answer' checked='checked'></td><td> None of the Above </td></tr></table>"
+                            + "<table align='center' class = 'mb-5' >"
+                            + "<tr><td style='padding:7px'><input type='radio' value='a' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["a"] + "</td></tr>"
+                            + "<tr><td style='padding:7px'><input type='radio' value='b' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["b"] + "</td></tr>"
+                            + "<tr><td style='padding:7px'><input type='radio' value='c' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["c"] + "</td></tr>"
+                            + "<tr><td style='padding:7px'><input type='radio' value='d' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["d"] + "</td></tr>"
+                            + "<tr><td style='padding:7px'><input type='radio' value='0' onclick='calScore(" + curr_qus_start + ")' name = 'answer' checked='checked'> None of the Above </td></tr></table>"
                             + "<input type='button' onclick='submitAnswer()' class = 'btn btn-primary' align='center' value='Submit' id = 'qus_button'><br>";
                     console.log('curr_qus_start : ' + qus_start[question]);
                     console.log('qus_time : ' + qus_time);

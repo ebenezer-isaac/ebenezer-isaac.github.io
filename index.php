@@ -34,30 +34,33 @@
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
     </head>
-    <body class="disable">
-        <div class="limiter">
-            <div class="container-login100">
-                <div id="mained" class="wrap-login100" style='text-align:center'>
-                    <h1>Hello there!!</h1>
+    <body onload="loader()" class="limiter">
+        <div id="mained" class="wrap-login100" style="vertical-align: middle;text-align: center;">
+            <div id="content" class="wrapasdf" style="display: none;vertical-align: middle;">
+                <h2>Hello there!!</h2>
+                <br>
+                <h3>Links<br> </h3>
+                <br>
+                <div style='border:solid 1px black;border-radius: 6px'>
                     <br>
-                    <h2>Links<br> </h2>
+                    <a href="quiz_index.php"> <h4>Quiz </h4></a>
                     <br>
-                    <div style='border:solid 1px black;border-radius: 6px'>
-                        <br>
-                        <a href="quiz_index.php"> <h2>Quiz </h2></a>
-                        <br>
-                        <a href="about.php"> <h2>About Page </h2></a>
-                        <br>
-                    </div>
+                    <a href="about.php"> <h4>About Page </h4></a>
                     <br>
-                    <br>
-                    <h6>Major Site Upgrade Underway<br>Sorry for the inconvenience</h6>
                 </div>
+                <br>
+                <br>
+                <h6>Major Site Upgrade Underway<br>Sorry for the inconvenience</h6>
             </div>
         </div>
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="js/main.js" type="168b875311079e67a1884235-text/javascript"></script>
-        <script src="js/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
+        <script>
+        function loader() {
+            $("#content").fadeIn(1000);
+        }
+        </script>
     </body>
 </html>
