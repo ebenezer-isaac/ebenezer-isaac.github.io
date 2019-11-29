@@ -1,16 +1,18 @@
 {
     "1": {
         "question": "This is question number 1",
-        "a": "Option A",
-        "b": "Option B",
-        "c": "Option C",
-        "d": "Option D"
+        "a": "Hello",
+        "b": "World",
+        "c": "Ebenezer",
+        "d": "Isaac",
+        "ans": "a"
     },
     "2": {
         "question": "This is question number 2",
         "a": "Option A",
         "b": "Option B",
         "c": "Option C",
-        "d": "Option D"
+        "d": "Option D",
+        "ans": "b"
     }
 }

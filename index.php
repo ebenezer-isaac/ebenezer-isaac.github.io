@@ -44,7 +44,7 @@
                     <br>
                     <div style='border:solid 1px black;border-radius: 6px'>
                         <br>
-                        <a href="quiz.php"> <h2>Quiz </h2></a>
+                        <a href="quiz_index.php"> <h2>Quiz </h2></a>
                         <br>
                         <a href="about.php"> <h2>About Page </h2></a>
                         <br>

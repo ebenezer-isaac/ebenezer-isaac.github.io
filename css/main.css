@@ -161,7 +161,7 @@ iframe {
 
 .container-login100 {
     width: 100%;  
-    height: 80vh;  
+    height: auto;  
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -181,7 +181,7 @@ iframe {
 .wrap-login100 {
     font-family: Palatino,serif;
     width: 80vh;
-    height: 80vh;  
+    height: auto;  
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
