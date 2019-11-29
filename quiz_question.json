@@ -1,18 +1,18 @@
 {
     "1": {
-        "question": "This is question number 1",
-        "a": "Hello",
-        "b": "World",
-        "c": "Ebenezer",
-        "d": "Isaac",
-        "ans": "a"
+        "question": "Who betrayed Jesus?",
+        "a": "John the Baptist",
+        "b": "Paul",
+        "c": "Judas Iscariot",
+        "d": "Moses",
+        "ans": "c"
     },
     "2": {
-        "question": "This is question number 2",
-        "a": "Option A",
-        "b": "Option B",
-        "c": "Option C",
-        "d": "Option D",
-        "ans": "b"
+        "question": "How many books are there in the bible?",
+        "a": "64",
+        "b": "68",
+        "c": "66",
+        "d": "67",
+        "ans": "c"
     }
 }

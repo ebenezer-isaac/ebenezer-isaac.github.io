@@ -153,16 +153,8 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
-.limiter {
-    width: 100%;
-    height: 100%; 
-    margin: 0 auto;
-}
-
-.container-login100 {
-    width: 100%;  
-    height: auto;  
-    min-height: 100vh;
+.limiter { 
+    padding: 5% 5% 5% 5%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -179,14 +171,25 @@ iframe {
 }
 
 .wrap-login100 {
+
     font-family: Palatino,serif;
-    width: 80vh;
-    height: auto;  
+    min-height:55%; 
+    height:auto;
+    min-width:80%;
+    justify-content: center;
+    align-items: center;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
-    width:80%;
-    padding: 20px 20px 20px 20px ;
+
+}
+
+.wrapasdf {
+    font-family: Palatino,serif;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    padding: 5% 5% 5% 5%;
 }
 
 /*------------------------------------------------------------------
@@ -207,7 +210,6 @@ iframe {
 
 .symbol-input100 {
     font-size: 15px;
-
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -223,7 +225,6 @@ iframe {
     padding-left: 35px;
     pointer-events: none;
     color: #666666;
-
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -246,40 +247,7 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 20px;
 }
-
-.login100-form-btn {
-    font-family: Montserrat-Bold;
-    font-size: 15px;
-    line-height: 1.5;
-    color: #fff;
-    text-transform: uppercase;
-
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    background: #57b846;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 25px;
-
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-}
-
-.login100-form-btn:hover {
-    background: #333333;
-}
-
-
 
 /*------------------------------------------------------------------
 [ Responsive ]*/

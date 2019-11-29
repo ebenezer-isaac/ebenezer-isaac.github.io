@@ -9,15 +9,16 @@ session_start();
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <style>
+            .html{overflow: hidden;}
+        </style>
     </head>
-    <body onload="loader()">
-        <div class="limiter">
-            <div class="container-login100">
-                <div id="mained" class="wrap-login100" style="vertical-align: middle;text-align: center;">
-                    <div id="content" style="display: none;vertical-align: middle;"></div>
-                </div>
-            </div>
+    <body onload="loader()" class="limiter">
+
+        <div id="mained" class="wrap-login100" style="vertical-align: middle;text-align: center;">
+            <div id="content" class="wrapasdf" style="display: none;vertical-align: middle;"></div>
         </div>
+
         <script src="js/bootstrap.min.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="js/main.js" type="168b875311079e67a1884235-text/javascript"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -26,8 +27,8 @@ session_start();
 <?php
 date_default_timezone_set('Asia/Kolkata');
 echo "var serv_curr_time = " . time() . sprintf('%03d', (int) (explode(" ", microtime())[0] * 1000)) . ";";
-//echo "var start_time = " . (time() + 5) . "999;\n";
-echo "var start_time = " . strtotime("2019-11-29 20:45:00") . "000;\n";
+echo "var start_time = " . (time()) . "999;\n";
+//echo "var start_time = " . strtotime("2019-11-29 21:14:00") . "000;\n";
 echo "var questions = ";
 $fh = fopen('quiz_question.json', 'r');
 while ($line = fgets($fh)) {
@@ -36,9 +37,9 @@ while ($line = fgets($fh)) {
 fclose($fh);
 ?>
         //seconds
-        var qus_time = 10;
+        var qus_time = 30;
         var buff_time = 10;
-        var res_time = 10;
+        var res_time = 20;
         var time_adj = serv_curr_time - new Date().getTime();
         function calTime() {
             return (new Date().getTime() + time_adj);
@@ -47,7 +48,7 @@ fclose($fh);
         var per_qus_time = (qus_time + buff_time + res_time) * 1000;
         var quiz_time = no_of_qus * per_qus_time;
         var qus_start = [0];
-        var question, score = 0, name = "xyz", timerObject, x, y, serial = 0, answer = "0",total = 0;
+        var question, score = 0, name = "xyz", timerObject, x, y, serial = 0, answer = "0", total = 0, resultTable;
         var curr_time = calTime();
         console.log("curr_time = " + curr_time);
         console.log("start_time    = " + start_time);
@@ -56,7 +57,6 @@ fclose($fh);
 
             console.log("ques_start[" + i + "] = " + qus_start[i]);
         }
-
         var main = document.getElementById("content");
         function pad(num) {
             var s = num + "";
@@ -69,25 +69,23 @@ fclose($fh);
             if (curr_time <= start_time + quiz_time - per_qus_time) {
                 start();
             } else if (curr_time <= start_time + quiz_time) {
-                main.innerHTML = "All Questions Over<br>Waiting for Participants to submit Answers";
+                main.innerHTML = "<p class='lead justify-content-center'>All Questions Over<br>Waiting for Participants to submit Answers<br><div class='justify-content-center' id='timer_display'>--</div></p>";
+                timer(start_time + quiz_time - curr_time, 4);
                 $("#content").fadeIn(500);
                 setTimeout(function () {
                     finals();
-                    clearInterval(x);
                 }, start_time + quiz_time - curr_time);
             } else {
                 finals();
             }
         }
         function start() {
-            main.innerHTML = "Welcome"
-                    + "<br><br>"
-                    + "Enter your Name below:"
-                    + "<br><br>"
+            main.innerHTML = "<h2 class='mb-3'>Bible Quiz</h2><p class='lead justify-content-center'>01<sup>st</sup> Dec 2019<br>Bretheren Assembly<br>Vadodara</p>"
+                    + "<br><h2 class='mb-4'>Enter your Name below :</h2>"
                     + "<input name='name' id = 'name' type='text' style='' placeholder='Your Name Here'>"
                     + "<br><br>"
                     + "<input type='button' autofocus value = 'Start' class = 'btn btn-primary' onclick='saveName()'><br><br>"
-                    + "<div id='timer_display'>--</div>";
+                    + "<div class='justify-content-center' id='timer_display'>--</div>";
             var curr_time = calTime();
             timer(start_time - curr_time, 1);
             $("#content").fadeIn(500);
@@ -113,7 +111,7 @@ fclose($fh);
             console.log('waitForStart');
             var curr_time = calTime();
             timer((start_time - curr_time), 2);
-            main.innerHTML = "Waiting for others to join<br><div id='timer_display'>--</div>";
+            main.innerHTML = "<h5 class='m-7'>Waiting for others to join</h5><div class='justify-content-center' id='timer_display'>--</div>";
             $("#content").fadeIn(500);
             console.log('curr_time : ' + curr_time);
             console.log('start_time : ' + start_time);
@@ -128,17 +126,17 @@ fclose($fh);
             if (curr_time < start_time + quiz_time) {
                 var curr_qus_start = qus_start[question];
                 if (curr_time < curr_qus_start + (qus_time * 1000)) {
-                    var content = "Name : " + name + "<br>";
-                    content += "Question : " + question + "/" + no_of_qus + "<br><br>";
-                    content += questions["" + question]["question"] + "<br>";
-                    content += "<input type='radio' value='a' onclick='calScore(" + curr_qus_start + ")' name = 'answer'> " + questions["" + question]["a"] + "<br>";
-                    content += "<input type='radio' value='b' onclick='calScore(" + curr_qus_start + ")' name = 'answer'> " + questions["" + question]["b"] + "<br>";
-                    content += "<input type='radio' value='c' onclick='calScore(" + curr_qus_start + ")' name = 'answer'> " + questions["" + question]["c"] + "<br>";
-                    content += "<input type='radio' value='d' onclick='calScore(" + curr_qus_start + ")' name = 'answer'> " + questions["" + question]["d"] + "<br>";
-                    content += "<input type='radio' value='0' onclick='calScore(" + curr_qus_start + ")' name = 'answer' checked='checked'> None of the Above<br><br>";
-                    content += "<input type='button' onclick='submitAnswer()' class = 'btn btn-primary' align='center' value='Submit' id = 'qus_button'><br>";
-                    content += " Auto Submit in : <div id='timer_display'>--</div>";
-                    main.innerHTML = content;
+                    main.innerHTML = "<table width='100%' class = 'mb-3' style='text-align:center'><tr><td width='33%'><h6 class='mb-0'>Name : " + name + "</h6></td></tr>"
+                            + "<tr><td width='33%'><h6 class='mb-0'>Question : " + question + "/" + no_of_qus
+                            + "</h6></td></tr></table>"
+                            + "<h2 class='mb-3'>" + questions["" + question]["question"] + "</h2><div class='justify-content-center' id='timer_display'>--</div><br>"
+                            + "<table class = 'mb-5' width = '100%' align = 'left'>"
+                            + "<tr><td width = '20%'><input type='radio' value='a' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td width = '80%'>" + questions["" + question]["a"] + "</td></tr>"
+                            + "<tr><td><input type='radio' value='b' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["b"] + "</td></tr>"
+                            + "<tr><td><input type='radio' value='c' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["c"] + "</td></tr>"
+                            + "<tr><td><input type='radio' value='d' onclick='calScore(" + curr_qus_start + ")' name = 'answer'></td><td>" + questions["" + question]["d"] + "</td></tr>"
+                            + "<tr><td><input type='radio' value='0' onclick='calScore(" + curr_qus_start + ")' name = 'answer' checked='checked'></td><td> None of the Above </td></tr></table>"
+                            + "<input type='button' onclick='submitAnswer()' class = 'btn btn-primary' align='center' value='Submit' id = 'qus_button'><br>";
                     console.log('curr_qus_start : ' + qus_start[question]);
                     console.log('qus_time : ' + qus_time);
                     console.log('timer : ' + ((curr_qus_start - curr_time) + (qus_time * 1000)));
@@ -146,10 +144,10 @@ fclose($fh);
                 } else {
                     var content = "Name : " + name + "<br>";
                     content += "Question : " + question + "/" + no_of_qus + "<br><br>";
-                    content += "Your Missed the question";
-                    content += "<br>Next Question in : <div id='timer_display'>--</div>";
+                    content += "<h4 class='mb-3'>Your Missed the question</h4>";
+                    content += "<br>Next Question in : <div class='justify-content-center' id='timer_display'>--</div>";
                     main.innerHTML = content;
-                    timer((curr_qus_start + per_qus_time - curr_time), 2);
+                    timer((curr_qus_start + per_qus_time - curr_time), 5);
                 }
                 $("#content").fadeIn(500);
             } else {
@@ -168,44 +166,48 @@ fclose($fh);
         }
         function submitAnswer() {
             clearInterval(x);
+            answer = "" + $("input[name='answer']:checked").val();
             console.log("submitAnswer");
             var temp = ((((question * per_qus_time) + start_time) - calTime()) - (res_time * 1000));
-            var max = temp - 5000;
-            if (temp < 5000)
-            {
+            var immunity = Math.floor((buff_time / 100) * 80);
+            var max = temp - immunity;
+            if (temp < immunity) {
                 max = 1;
             }
             var random = Math.floor(Math.random() * (+max - +0)) + +0;
             console.log("random : " + random);
             console.log("next question start at : " + ((question * per_qus_time) + start_time));
-            main.innerHTML = "Waiting <div id='timer_display'>--</div>for others to submit";
-            console.log("max (result in ): " + (max + 5000));
+            main.innerHTML = "<br><br><h4 class='mb-3'>Waiting </h4><div class='justify-content-center' id='timer_display'>--</div><h4 class='mb-3'>for others to submit</4>";
+            console.log("max (result in ): " + (max + immunity));
             var corr_answer = questions["" + question]["ans"];
-            var message = "Your Answer : " + answer + "<br>" + "Correct Answer : " + corr_answer + "<br>";
-            if (corr_answer != answer) {
-                if (answer != "0") {
-                    score = score * -1;
-                    message += "Your score decreased by " + score + "<br>";
-                } else {
-                    message += "Your remains the same<br>";
-                }
-            } else {
-                message += "Your score increased by " + score + "<br>";
+            var ans_text = "None";
+            if (corr_answer != answer && answer != "0") {
+                score = score * -1;
             }
-            total = total+score;
-            message+="Your Total Score : "+total+"<br>";
-            var resultTable = "";
+            if (answer != "0") {
+                ans_text = questions["" + question]["" + answer];
+            }
+            total = total + score;
+            var message = "<br><h3 class='mb-3'>Results</h3>"
+                    + "<h6 class='mb-2'>Your Answer    : " + ans_text + ""
+                    + "<h6 class='mb-2'>Correct Answer : " + questions["" + question]["" + questions["" + question]["ans"]] + "</h6>"
+                    + "<h6 class='mb-2'>Score : " + score + "</h6>"
+                    + "<h6 class='mb-2'>Total : " + total + "</h6>";
+            if (question === no_of_qus) {
+                message += "Next Question in : ";
+            } else {
+                message += "Final Results in : ";
+            }
+            message += "<div class='justify-content-center' id='timer_display'>--</div><br><div id='tab'></tab><br>";
+            answer = "0";
             setTimeout(function () {
                 ajaxSubmitAnswer(score);
-                $.get("quiz_result.php", function (data, status) {
-                    resultTable = data;
-                });
             }, random);
-            timer((max + 5000), 4);
+            timer((max + immunity), 4);
             setTimeout(function () {
                 clearInterval(x);
-                result(message, resultTable);
-            }, max + 5000);
+                result(message);
+            }, max + immunity);
         }
         function ajaxSubmitAnswer(score) {
             $.get("quiz_answer.php?serial=" + serial + "&score=" + score, function (data, status) {
@@ -215,21 +217,21 @@ fclose($fh);
             var curr_time = calTime();
             score = Math.floor((qus_start + (qus_time * 1000) - curr_time) / 100);
             console.log("score : " + score);
-            answer = "" + $("input[name='answer']:checked").val();
         }
-        function result(message, resultTable) {
-            main.innerHTML = message + "Results<br> Next Question in : <div id='timer_display'>--</div>" + resultTable;
-            $("#content").fadeIn(500);
-            console.log("result");
-            console.log("next question in : " + next_qus);
-            var next_qus = (question * per_qus_time) + start_time - calTime();
-            timer(next_qus, 2);
-        }
-        function finals() {
+        function result(message) {
+            main.innerHTML = message;
             $.get("quiz_result.php", function (data, status) {
                 document.getElementById("tab").innerHTML = data;
             });
-            main.innerHTML = "Quiz Over<br>Final Results<div id='tab'></tab>";
+            $("#content").fadeIn(500);
+            var next_qus = (question * per_qus_time) + start_time - calTime();
+            timer(next_qus, 5);
+        }
+        function finals() {
+            main.innerHTML = "<h3 class='mb-3'>Final Results</h3><br><div id='tab'></tab>";
+            $.get("quiz_result.php", function (data, status) {
+                document.getElementById("tab").innerHTML = data;
+            });
             $("#content").fadeIn(500);
         }
         function timer(distance, type) {
@@ -267,6 +269,8 @@ fclose($fh);
                         quiz();
                     } else if (type === 3) {
                         $("#qus_button").click();
+                    } else if (type === 5) {
+                        quiz();
                     }
                 } else {
                     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -274,24 +278,27 @@ fclose($fh);
                     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                     var countdown = "";
-                    if (type !== 3 && type !== 4) {
+                    if (type !== 3 && type !== 4 && type !== 5) {
                         countdown = "Quiz Starts in : ";
+                    }
+                    if (type === 3) {
+                        countdown = "Time Left : ";
                     }
                     var flag = 0;
                     if (days > 0) {
-                        countdown += pad(days) + "Days ";
+                        countdown += pad(days) + "Dys ";
                         flag = 1;
                     }
                     if (hours > 0 || flag === 1) {
-                        countdown += pad(hours) + "Hours ";
+                        countdown += pad(hours) + "Hrs ";
                         flag = 1;
                     }
                     if (minutes > 0 || flag === 1) {
-                        countdown += pad(minutes) + "Minutes ";
+                        countdown += pad(minutes) + "Min ";
                         flag = 1;
                     }
                     if (seconds > 0 || flag === 1) {
-                        countdown += pad(seconds) + " Seconds";
+                        countdown += pad(seconds) + " Sec";
                         flag = 1;
                     }
                     if (flag === 0) {
