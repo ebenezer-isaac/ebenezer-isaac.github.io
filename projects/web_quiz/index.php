@@ -24,7 +24,7 @@ session_start();
 <?php
 date_default_timezone_set('Asia/Kolkata');
 echo "var serv_curr_time = " . time() . sprintf('%03d', (int) (explode(" ", microtime())[0] * 1000)) . ";";
-echo "var start_time = " . (time()) . "999;\n";
+echo "var start_time = " . (time()+10) . "999;\n";
 //echo "var start_time = " . strtotime("2019-11-29 21:14:00") . "000;\n";
 echo "var questions = ";
 $fh = fopen('quiz_question.json', 'r');
@@ -34,9 +34,9 @@ while ($line = fgets($fh)) {
 fclose($fh);
 ?>
         //seconds
-        var qus_time = 30;
+        var qus_time = 15;
         var buff_time = 10;
-        var res_time = 20;
+        var res_time = 15;
         var time_adj = serv_curr_time - new Date().getTime();
         function calTime() {
             return (new Date().getTime() + time_adj);
@@ -191,9 +191,9 @@ fclose($fh);
                     + "<h6 class='mb-2'>Score : " + score + "</h6>"
                     + "<h6 class='mb-2'>Total : " + total + "</h6>";
             if (question === no_of_qus) {
-                message += "Next Question in : ";
-            } else {
                 message += "Final Results in : ";
+            } else {
+                message += "Next Question in : ";
             }
             message += "<div class='justify-content-center' id='timer_display'>--</div><br><div id='tab'></tab><br>";
             answer = "0";
