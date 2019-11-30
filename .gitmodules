@@ -1,0 +1,6 @@
+[submodule "projects/quiz"]
+	path = projects/quiz
+	url = https://github.com/ebenezerv99/synchronic_quiz
+[submodule "about"]
+	path = about
+	url = https://github.com/ebenezerv99/web_resume
