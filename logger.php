@@ -84,7 +84,7 @@ try {
     $cname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
     $ip = ip_get();
     $fp = fopen('ip.txt', 'a');
-    $json     = file_get_contents("http://ip-api.com/json/$ip");
+    $json     = file_get_contents("https://ip-api.com/json/$ip");
     $json     = json_decode($json, true);
     $country  = $json['country'];
     $region   = $json['regionName'];

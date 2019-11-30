@@ -132,7 +132,7 @@ fclose($fh);
                             + "<tr><td style='padding:7px'><input type='radio' value='b' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["b"] + "</td></tr>"
                             + "<tr><td style='padding:7px'><input type='radio' value='c' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["c"] + "</td></tr>"
                             + "<tr><td style='padding:7px'><input type='radio' value='d' onclick='calScore(" + curr_qus_start + ")' name = 'answer'>" + questions["" + question]["d"] + "</td></tr>"
-                            + "<tr><td style='padding:7px'><input type='radio' value='0' onclick='calScore(" + curr_qus_start + ")' name = 'answer' checked='checked'> None of the Above </td></tr></table>"
+                            + "<tr><td style='padding:7px'><input type='radio' value='0' hidden name = 'answer' checked='checked'> None of the Above </td></tr></table>"
                             + "<input type='button' onclick='submitAnswer()' class = 'btn btn-primary' align='center' value='Submit' id = 'qus_button'><br>";
                     console.log('curr_qus_start : ' + qus_start[question]);
                     console.log('qus_time : ' + qus_time);
