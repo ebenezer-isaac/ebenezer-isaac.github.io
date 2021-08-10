@@ -1,0 +1,188 @@
+[21-Mar-2020 23:09:59 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[21-Mar-2020 23:46:31 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 00:02:50 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[21-Mar-2020 18:45:37 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[22-Mar-2020 00:15:37 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[21-Mar-2020 18:45:38 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[22-Mar-2020 00:15:38 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 00:18:41 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 01:07:57 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 02:03:47 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Mar-2020 02:28:58 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 08:32:31 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 10:18:50 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Mar-2020 11:16:20 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 11:32:23 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 11:35:11 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 11:39:41 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 11:39:42 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 12:13:48 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:45:31 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:45:32 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:45:33 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:45:33 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:45:35 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:47:06 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:47:06 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:47:07 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:47:07 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 15:47:07 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 17:12:04 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 17:12:16 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Mar-2020 17:14:32 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 17:32:04 Asia/Kolkata] PHP Warning:  file_get_contents(https://analytics.ebenezer-isaac.com/counter.txt): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[22-Mar-2020 20:29:23 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Mar-2020 06:00:52 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[23-Mar-2020 14:05:41 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Mar-2020 15:27:11 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Mar-2020 21:41:41 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[24-Mar-2020 10:05:32 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[24-Mar-2020 14:59:34 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[24-Mar-2020 15:07:03 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[26-Mar-2020 00:48:56 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[26-Mar-2020 01:05:14 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[25-Mar-2020 19:35:15 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[26-Mar-2020 22:20:37 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[27-Mar-2020 14:46:29 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[28-Mar-2020 15:30:29 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[28-Mar-2020 10:00:30 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[28-Mar-2020 16:07:17 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[29-Mar-2020 04:24:25 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[29-Mar-2020 04:44:17 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[29-Mar-2020 14:45:44 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[30-Mar-2020 03:33:26 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[30-Mar-2020 12:31:36 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[30-Mar-2020 12:31:36 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[31-Mar-2020 14:28:25 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[31-Mar-2020 08:58:26 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[31-Mar-2020 16:24:38 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[31-Mar-2020 16:25:47 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[01-Apr-2020 01:48:08 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[02-Apr-2020 11:13:00 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[03-Apr-2020 20:50:32 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[03-Apr-2020 15:20:33 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[04-Apr-2020 12:10:18 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[05-Apr-2020 03:51:27 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[07-Apr-2020 01:03:13 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[07-Apr-2020 10:03:58 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[08-Apr-2020 00:06:42 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[08-Apr-2020 16:37:05 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[08-Apr-2020 22:12:45 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[08-Apr-2020 22:12:45 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[09-Apr-2020 07:46:02 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 07:49:57 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 07:51:16 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 07:52:33 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 07:53:20 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 08:06:37 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 02:36:37 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[09-Apr-2020 13:42:53 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[09-Apr-2020 16:28:01 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[10-Apr-2020 02:19:42 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[10-Apr-2020 08:32:08 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[10-Apr-2020 11:06:13 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[10-Apr-2020 05:36:14 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[10-Apr-2020 11:58:48 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[10-Apr-2020 20:23:11 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[11-Apr-2020 03:34:59 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[11-Apr-2020 06:45:06 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[11-Apr-2020 10:29:32 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[12-Apr-2020 17:12:30 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[12-Apr-2020 11:42:30 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[12-Apr-2020 19:03:13 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[12-Apr-2020 13:33:15 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[14-Apr-2020 11:16:56 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[14-Apr-2020 17:05:06 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[14-Apr-2020 18:05:21 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[14-Apr-2020 12:35:22 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[15-Apr-2020 05:01:55 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[15-Apr-2020 08:01:15 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[15-Apr-2020 02:31:15 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[15-Apr-2020 09:32:15 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[15-Apr-2020 13:40:06 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[15-Apr-2020 15:18:35 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[16-Apr-2020 11:10:19 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[16-Apr-2020 13:49:28 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[16-Apr-2020 22:02:33 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[17-Apr-2020 03:23:45 Asia/Kolkata] PHP Warning:  Packets out of order. Expected 0 received 1. Packet size=76 in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[17-Apr-2020 03:23:45 Asia/Kolkata] PHP Warning:  mysqli::__construct(): Error while reading greeting packet. PID=1496102 in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[17-Apr-2020 03:23:45 Asia/Kolkata] PHP Warning:  mysqli::__construct(): (HY000/2006): MySQL server has gone away in /home/u117204720/domains/ebenezer-isaac.com/public_html/index.php on line 143
+[17-Apr-2020 05:30:49 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[17-Apr-2020 00:00:50 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[17-Apr-2020 07:04:14 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[17-Apr-2020 16:37:39 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[18-Apr-2020 01:38:13 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[18-Apr-2020 10:41:56 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[18-Apr-2020 12:04:18 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[19-Apr-2020 17:31:54 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[19-Apr-2020 12:01:56 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[19-Apr-2020 19:16:58 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[19-Apr-2020 13:47:01 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[20-Apr-2020 00:01:33 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[19-Apr-2020 18:31:34 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[20-Apr-2020 21:44:22 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[21-Apr-2020 08:58:08 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[21-Apr-2020 19:17:04 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[21-Apr-2020 23:28:58 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 06:50:18 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 01:20:19 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[22-Apr-2020 07:01:17 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 18:39:54 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 13:09:54 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[22-Apr-2020 23:28:56 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 17:58:57 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[22-Apr-2020 23:46:45 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 18:16:46 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[23-Apr-2020 01:27:08 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[22-Apr-2020 19:57:09 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[23-Apr-2020 06:33:50 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[23-Apr-2020 15:16:23 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Apr-2020 15:16:23 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Apr-2020 17:05:23 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[23-Apr-2020 17:20:04 UTC] PHP Notice:  Undefined index: HTTP_USER_AGENT in /home/u117204720/domains/ebenezer-isaac.com/public_html/logger.php on line 3
+[24-Apr-2020 19:39:58 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[24-Apr-2020 14:09:58 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[25-Apr-2020 11:46:18 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[25-Apr-2020 11:50:23 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[25-Apr-2020 18:24:34 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[25-Apr-2020 12:54:35 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[26-Apr-2020 08:44:17 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[26-Apr-2020 12:09:34 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[26-Apr-2020 06:39:35 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[26-Apr-2020 13:04:32 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[26-Apr-2020 18:27:50 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[27-Apr-2020 05:05:05 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[27-Apr-2020 22:33:33 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[28-Apr-2020 00:24:53 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[30-Apr-2020 05:53:52 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[30-Apr-2020 00:23:52 UTC] PHP Notice:  Undefined variable: main in /home/u117204720/domains/ebenezer-isaac.com/public_html/mail.php on line 8
+[30-Apr-2020 07:38:59 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[01-May-2020 11:34:45 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43
+[01-May-2020 11:55:46 Asia/Kolkata] PHP Notice:  Undefined index: plan in /home/u117204720/domains/ebenezer-isaac.com/public_html/contact.php on line 43

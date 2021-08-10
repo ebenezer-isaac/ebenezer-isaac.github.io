@@ -1,0 +1,28 @@
+Sitemap: https://www.ebenezer-isaac.com/sitemap.xml
+
+User-agent: *
+Disallow: /about/logger.php
+Disallow: /projects/logger.php
+Disallow: /projects/construction.php
+Disallow: /mail.php
+Disallow: /writer.php
+Disallow: /logger.php
+Disallow: /*.txt
+Disallow: /*.png
+Disallow: /*.jpg
+Disallow: /*.jpeg
+Disallow: /*.giff
+Disallow: /*.svg
+
+Noindex: /about/logger.php
+Noindex: /projects/logger.php
+Noindex: /projects/construction.php
+Noindex: /mail.php
+Noindex: /writer.php
+Noindex: /logger.php
+Noindex: /*.txt
+Noindex: /*.png
+Noindex: /*.jpg
+Noindex: /*.jpeg
+Noindex: /*.giff
+Noindex: /*.svg
