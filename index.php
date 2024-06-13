@@ -15,9 +15,9 @@
     <title>Ebenezer Isaac | Application Developer at IBM | MCA - CEG</title>
     <meta property="og:title" content="Ebenezer Isaac | Application Developer at IBM" />
     <meta property="og:site_name" content="Click To Know More">
-    <meta property="og:url" content="https://ebenezer-isaac.github.io" />
+    <meta property="og:url" content="https://ebenezer-isaac.com" />
     <meta property="og:description" content="Application Developer at IBM">
-    <meta property="og:image" content="https://ebenezer-isaac.github.io/img/favicon.png">
+    <meta property="og:image" content="https://ebenezer-isaac.com/img/favicon.png">
     <meta property="og:image:width" content="100" />
     <meta property="og:image:height" content="100" />
     <meta property="og:type" content="website" />
