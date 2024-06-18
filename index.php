@@ -177,13 +177,39 @@
                                 Me</a>
                             for more Details.
                         </p>
+                        <p class="justify-content-center">Prominent Works:</p>
+                        <ul>
+                            <li>
+                                <a href="https://mycrolinks.com/" target="_blank">MycroLinks Business Website</a>
+                            </li>
+                            <li>
+                                <a href="https://ebenezer-isaac.com/" target="_blank">Personal Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="https://demo.mycrolinks.com/deepwoods-mcc.com/" target="_blank">Deepwoods MCC</a>
+                            </li>
+                            <li>
+                                <a href="https://demo.mycrolinks.com/bharathubservices.com/" target="_blank">Bharat Hub Services</a>
+                            </li>
+                            <li>
+                                <a href="https://demo.mycrolinks.com/vrajlogistics.in/" target="_blank">Vraj Logistics</a>
+                            </li>
+                            <li>
+                                <a href="https://demo.mycrolinks.com/web-traffic-analysis/" target="_blank">Web Traffic Analysis</a>
+                            </li>
+                            <li>
+                                <a href="https://demo.mycrolinks.com/personal-organizer/" target="_blank">Personal Organizer</a>
+                            </li>
+                            <li>
+                                <a href="https://play.google.com/store/apps/details?id=com.mycrolinks.mycrolinks&pcampaignid=web_share"
+                                    target="_blank">MycroLinks Android App</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="resume-date text-md-right">
                         <span class="text-primary"> April 2018 to Present</span>
                     </div>
                 </div>
-
-
             </div>
         </section>
         <section class="resume-section p-3 p-lg-5 d-flex flex-column disable" id="projects">
@@ -210,7 +236,7 @@
                         </ul>
                     </div>
                     <div class="resume-date text-md-right">
-                        <span class="text-primary">August 2019 - November 2019</span>
+                        <span class="text-primary">January 2022 - May 2022</span>
                     </div>
                 </div>
                 <div class="resume-item d-flex flex-column flex-md-row mb-5">
