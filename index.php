@@ -409,7 +409,7 @@
         <section class="resume-section p-3 p-lg-5 d-flex flex-column disable" id="interests">
             <div class="my-auto">
                 <h2 class="mb-5">Interests</h2>
-                <p class="justify-content-center">Since my adolescence, I\'ve been deeply interested in software
+                <p class="justify-content-center">Since my adolescence, I've been deeply interested in software
                     development, exploring various projects as a passionate hobbyist. I continually seek out
                     opportunities to learn new technologies and programming languages.</p>
 
