@@ -1,6 +1,7 @@
 <?php ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta charset="utf-8">
@@ -36,6 +37,15 @@
 </head>
 
 <body id="page-top">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QFE59JFMPZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QFE59JFMPZ');
+    </script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top disable" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <span class="d-block d-lg-none">Ebenezer Isaac</span>
@@ -406,7 +416,9 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
+        integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="js/resume.min.js"></script>
     <script>
         function init() {
@@ -422,8 +434,5 @@
     </script>
 
 </body>
-<?php
-$page = "Portflolio";
-include "logger.php"; 
-?>
+
 </html>
