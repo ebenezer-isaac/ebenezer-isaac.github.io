@@ -1,0 +1,103 @@
+---
+import resume from "@/data/resume";
+
+const { basics } = resume;
+const phone = basics.phone.replace(/\s/g, "");
+---
+
+<section id="contact" class="section bg-white">
+  <div class="container mx-auto px-4">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Get in touch</p>
+    </div>
+
+    <div class="grid md:grid-cols-[280px_1fr] gap-8 max-w-4xl mx-auto">
+      <!-- Contact info -->
+      <div class="space-y-4">
+        <a
+          href={`https://wa.me/${phone}`}
+          class="flex items-center gap-3 p-3 rounded-xl bg-bg hover:shadow-md transition-shadow group"
+        >
+          <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center group-hover:bg-green-600 group-hover:text-white transition-colors">
+            <i class="bi bi-whatsapp text-lg"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-heading">WhatsApp</p>
+            <p class="text-sm text-muted">{basics.phone}</p>
+          </div>
+        </a>
+
+        <a
+          href={`tel:${phone}`}
+          class="flex items-center gap-3 p-3 rounded-xl bg-bg hover:shadow-md transition-shadow group"
+        >
+          <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <i class="bi bi-telephone text-lg"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-heading">Call Me</p>
+            <p class="text-sm text-muted">{basics.phone}</p>
+          </div>
+        </a>
+
+        <a
+          href={`mailto:${basics.email}`}
+          class="flex items-center gap-3 p-3 rounded-xl bg-bg hover:shadow-md transition-shadow group"
+        >
+          <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <i class="bi bi-envelope text-lg"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-heading">Email</p>
+            <p class="text-sm text-muted">{basics.email}</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Contact form -->
+      <form
+        action="https://formspree.io/f/mvgblldq"
+        method="POST"
+        class="space-y-4"
+      >
+        <div class="grid sm:grid-cols-2 gap-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            class="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            class="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+          />
+        </div>
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          required
+          class="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
+        />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Message"
+          required
+          class="w-full px-4 py-2.5 rounded-lg border border-gray-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition resize-none"
+        ></textarea>
+        <button
+          type="submit"
+          class="px-8 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-medium transition-colors shadow-md cursor-pointer"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

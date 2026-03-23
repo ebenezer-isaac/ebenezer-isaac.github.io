@@ -1,0 +1,39 @@
+---
+import resume from "@/data/resume";
+
+const { education } = resume;
+---
+
+<section id="education" class="section bg-bg">
+  <div class="container mx-auto px-4">
+    <div class="section-title">
+      <h2>Education</h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto grid gap-4">
+      {education.map((edu) => (
+        <div class="bg-white rounded-xl p-5 hover:shadow-md transition-shadow">
+          <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+            <h4 class="text-base font-bold text-heading">
+              {edu.studyType} — {edu.area}
+            </h4>
+            <span class="text-xs text-muted font-medium">{edu.endDate}</span>
+          </div>
+          <p class="text-sm text-primary font-medium mb-1">{edu.institution}</p>
+          {edu.score && (
+            <p class="text-xs text-muted">{edu.score}</p>
+          )}
+          {edu.courses.length > 0 && (
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              {edu.courses.map((course) => (
+                <span class="px-2 py-0.5 rounded text-xs bg-primary/5 text-muted">
+                  {course}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

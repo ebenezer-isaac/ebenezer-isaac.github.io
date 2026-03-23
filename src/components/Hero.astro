@@ -1,0 +1,129 @@
+---
+import resume from "@/data/resume";
+
+const { basics } = resume;
+const roles = basics.label.split(/\s+(?=\w+[-\s])/);
+const typedItems = roles.length > 1 ? roles : basics.label.split(" ");
+
+const socialIcons: Record<string, string> = {
+  LinkedIn: "bi-linkedin",
+  GitHub: "bi-github",
+  "Stack Overflow": "bi-stack-overflow",
+  Instagram: "bi-instagram",
+  Twitter: "bi-twitter-x",
+  Steam: "bi-steam",
+};
+
+// Extra links not in gist profiles — hardcoded fallbacks
+const extraProfiles = [
+  { network: "Stack Overflow", url: "https://stackoverflow.com/users/11380610/ebenezer-isaac" },
+  { network: "Instagram", url: "https://www.instagram.com/ebnezr.isaac" },
+  { network: "Steam", url: "https://steamcommunity.com/id/SilvanusStin" },
+];
+
+const gistNetworks = new Set(basics.profiles.map((p) => p.network));
+const allProfiles = [
+  ...basics.profiles,
+  ...extraProfiles.filter((p) => !gistNetworks.has(p.network)),
+];
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+>
+  <!-- Background -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/hero-bg.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center text-white px-4 max-w-3xl">
+    <h1 class="text-4xl md:text-6xl font-extrabold font-heading mb-4 tracking-tight text-white">
+      {basics.name}
+    </h1>
+    <p class="text-lg md:text-xl mb-2 font-light">
+      I'm a <span id="typed-output" class="font-semibold text-accent"></span>
+      <span class="animate-pulse">|</span>
+    </p>
+    <p class="text-sm md:text-base text-white/80 mb-6 max-w-xl mx-auto">
+      {basics.summary.split(".")[0]}.
+    </p>
+
+    <!-- Social links -->
+    <div class="flex justify-center gap-3 mb-6">
+      {allProfiles.map((profile) => (
+        <a
+          href={profile.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:bg-white hover:text-primary transition-all"
+          aria-label={profile.network}
+        >
+          <i class={`bi ${socialIcons[profile.network] ?? "bi-link-45deg"}`} />
+        </a>
+      ))}
+    </div>
+
+    <!-- CV Download -->
+    <a
+      href="/ebenezer_cv.pdf"
+      class="inline-flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-medium transition-colors shadow-lg"
+    >
+      Download CV <i class="bi bi-download"></i>
+    </a>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+    <a href="#about" class="text-white/50 hover:text-white transition-colors">
+      <i class="bi bi-chevron-down text-2xl"></i>
+    </a>
+  </div>
+</section>
+
+<script define:vars={{ items: basics.label.split(" / ").length > 1 ? basics.label.split(" / ") : ["Software Developer", "Full-Stack Engineer", "IoT Engineer", "AEM Developer"] }}>
+  function typeWriter() {
+    const el = document.getElementById("typed-output");
+    if (!el) return;
+
+    let itemIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function tick() {
+      const current = items[itemIndex];
+      if (isDeleting) {
+        el.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        el.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let delay = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === current.length) {
+        delay = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        itemIndex = (itemIndex + 1) % items.length;
+        delay = 400;
+      }
+
+      setTimeout(tick, delay);
+    }
+
+    tick();
+  }
+
+  typeWriter();
+  document.addEventListener("astro:after-swap", typeWriter);
+</script>

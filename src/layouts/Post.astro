@@ -1,0 +1,72 @@
+---
+import Page from "./Page.astro";
+import ShareBar from "@/components/ShareBar.astro";
+import ViewCount from "@/components/ViewCount.astro";
+
+interface Props {
+  title: string;
+  date: Date;
+  tags: string[];
+  excerpt: string;
+  readingTime: number;
+}
+
+const { title, date, tags, excerpt, readingTime } = Astro.props;
+const formattedDate = date.toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const url = Astro.url.pathname;
+---
+
+<Page
+  title={`${title} | Ebenezer Isaac`}
+  description={excerpt}
+  active="blog"
+>
+  <article class="section">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <!-- Back link -->
+      <a
+        href="/blog/"
+        class="inline-flex items-center gap-1 text-sm text-muted hover:text-primary mb-6 transition-colors"
+      >
+        <i class="bi bi-arrow-left"></i> All posts
+      </a>
+
+      <!-- Post header -->
+      <header class="mb-8">
+        <h1 class="text-3xl md:text-4xl font-extrabold font-heading text-heading leading-tight mb-3">
+          {title}
+        </h1>
+        <div class="flex flex-wrap items-center gap-4 text-sm text-muted">
+          <span class="flex items-center gap-1">
+            <i class="bi bi-calendar3"></i> {formattedDate}
+          </span>
+          <span class="flex items-center gap-1">
+            <i class="bi bi-clock"></i> {readingTime} min read
+          </span>
+          <ViewCount url={url} />
+        </div>
+        {tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-3">
+            {tags.map((tag) => (
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <!-- Post body -->
+      <div class="prose">
+        <slot />
+      </div>
+
+      <!-- Share bar -->
+      <ShareBar title={title} url={`https://ebenezer-isaac.com${url}`} />
+    </div>
+  </article>
+</Page>

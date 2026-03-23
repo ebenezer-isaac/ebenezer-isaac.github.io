@@ -1,0 +1,56 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<span
+  class="view-count flex items-center gap-1"
+  data-url={url}
+>
+  <i class="bi bi-eye"></i>
+  <span class="view-count-value">—</span> views
+</span>
+
+<script>
+  const UMAMI_API = "https://analytics.llmconveyors.com/api";
+  const WEBSITE_ID = "TODO_UMAMI_WEBSITE_ID";
+
+  async function fetchViewCount(pageUrl: string): Promise<number | null> {
+    try {
+      const params = new URLSearchParams({
+        url: pageUrl,
+        startAt: "0",
+        endAt: String(Date.now()),
+      });
+      const res = await fetch(
+        `${UMAMI_API}/websites/${WEBSITE_ID}/stats?${params}`,
+        { headers: { Accept: "application/json" } }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data?.pageviews?.value ?? null;
+    } catch {
+      return null;
+    }
+  }
+
+  async function loadCounts() {
+    const spans = document.querySelectorAll<HTMLElement>(".view-count[data-url]");
+    const results = await Promise.allSettled(
+      Array.from(spans).map((span) => fetchViewCount(span.dataset.url!))
+    );
+    spans.forEach((span, i) => {
+      const result = results[i];
+      const valueEl = span.querySelector(".view-count-value");
+      if (valueEl && result.status === "fulfilled" && result.value !== null) {
+        valueEl.textContent = result.value.toLocaleString();
+      }
+    });
+  }
+
+  loadCounts();
+  document.addEventListener("astro:after-swap", loadCounts);
+</script>

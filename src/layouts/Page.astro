@@ -1,0 +1,68 @@
+---
+import Base from "./Base.astro";
+import Nav from "@/components/Nav.astro";
+import resume from "@/data/resume";
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  active?: string;
+}
+
+const { title, description, ogImage, active } = Astro.props;
+const { basics } = resume;
+
+const socialIcons: Record<string, string> = {
+  LinkedIn: "bi-linkedin",
+  GitHub: "bi-github",
+  "Stack Overflow": "bi-stack-overflow",
+  Instagram: "bi-instagram",
+  Twitter: "bi-twitter-x",
+  Steam: "bi-steam",
+};
+
+const extraProfiles = [
+  { network: "Stack Overflow", url: "https://stackoverflow.com/users/11380610/ebenezer-isaac" },
+  { network: "Instagram", url: "https://www.instagram.com/ebnezr.isaac" },
+  { network: "Steam", url: "https://steamcommunity.com/id/SilvanusStin" },
+];
+
+const gistNetworks = new Set(basics.profiles.map((p) => p.network));
+const allProfiles = [
+  ...basics.profiles,
+  ...extraProfiles.filter((p) => !gistNetworks.has(p.network)),
+];
+---
+
+<Base title={title} description={description} ogImage={ogImage}>
+  <Nav active={active} />
+
+  <main class="xl:ml-[300px]">
+    <slot />
+  </main>
+
+  <footer class="xl:ml-[300px] bg-white py-8 text-center">
+    <div class="container mx-auto px-4">
+      <h3 class="text-xl font-bold font-heading text-heading mb-3">
+        {basics.name}
+      </h3>
+      <div class="flex justify-center gap-3 mb-4">
+        {allProfiles.map((profile) => (
+          <a
+            href={profile.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            aria-label={profile.network}
+          >
+            <i class={`bi ${socialIcons[profile.network] ?? "bi-link-45deg"}`} />
+          </a>
+        ))}
+      </div>
+      <p class="text-xs text-muted">
+        &copy; {new Date().getFullYear()} {basics.name}. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</Base>

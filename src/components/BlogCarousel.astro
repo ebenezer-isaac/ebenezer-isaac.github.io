@@ -1,0 +1,112 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 6);
+---
+
+{posts.length > 0 && (
+  <section id="blog-posts" class="section bg-bg">
+    <div class="container mx-auto px-4">
+      <div class="section-title">
+        <h2>Writing</h2>
+        <p>Thoughts on software, IoT, and the craft of building things</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto">
+        <div id="blog-carousel" class="overflow-hidden">
+          <div class="flex gap-5" id="blog-carousel-container">
+            {posts.map((post) => {
+              const formattedDate = post.data.date.toLocaleDateString("en-GB", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              });
+              return (
+                <div class="flex-[0_0_100%] sm:flex-[0_0_48%] lg:flex-[0_0_31%] min-w-0">
+                  <div class="bg-white rounded-xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
+                    <p class="text-xs text-muted mb-2">{formattedDate}</p>
+                    <h4 class="text-base font-bold text-heading leading-snug mb-2">
+                      <a
+                        href={`/blog/${post.id}/`}
+                        class="hover:text-primary transition-colors"
+                      >
+                        {post.data.title}
+                      </a>
+                    </h4>
+                    <p class="text-sm text-muted flex-1 mb-3 line-clamp-3">
+                      {post.data.excerpt}
+                    </p>
+                    <a
+                      href={`/blog/${post.id}/`}
+                      class="text-sm text-primary font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+                    >
+                      Read more <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Carousel dots */}
+        <div id="blog-carousel-dots" class="flex justify-center gap-2 mt-5"></div>
+
+        <div class="text-center mt-6">
+          <a
+            href="/blog/"
+            class="inline-flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-full text-sm font-medium transition-colors shadow-md"
+          >
+            View all posts <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<script>
+  import EmblaCarousel from "embla-carousel";
+  import Autoplay from "embla-carousel-autoplay";
+
+  function initCarousel() {
+    const node = document.getElementById("blog-carousel");
+    const dotsNode = document.getElementById("blog-carousel-dots");
+    if (!node || !dotsNode) return;
+
+    const embla = EmblaCarousel(node, { loop: true, align: "start" }, [
+      Autoplay({ delay: 5000, stopOnInteraction: false }),
+    ]);
+
+    function setupDots() {
+      const scrollSnaps = embla.scrollSnapList();
+      dotsNode!.innerHTML = "";
+      scrollSnaps.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className =
+          "w-2.5 h-2.5 rounded-full bg-gray-300 transition-colors cursor-pointer";
+        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        dot.addEventListener("click", () => embla.scrollTo(i));
+        dotsNode!.appendChild(dot);
+      });
+      updateDots();
+    }
+
+    function updateDots() {
+      const selected = embla.selectedScrollSnap();
+      dotsNode!.querySelectorAll("button").forEach((dot, i) => {
+        dot.classList.toggle("bg-primary", i === selected);
+        dot.classList.toggle("bg-gray-300", i !== selected);
+      });
+    }
+
+    embla.on("select", updateDots);
+    embla.on("init", setupDots);
+  }
+
+  initCarousel();
+  document.addEventListener("astro:after-swap", initCarousel);
+</script>

@@ -1,0 +1,43 @@
+---
+import resume from "@/data/resume";
+
+const { projects } = resume;
+---
+
+<section id="projects" class="section bg-white">
+  <div class="container mx-auto px-4">
+    <div class="section-title">
+      <h2>Projects</h2>
+      <p>Things I've built</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+      {projects.map((project) => {
+        const [tech, ...descParts] = project.description.split(" - ");
+        const desc = descParts.join(" - ") || tech;
+        const techStack = descParts.length > 0 ? tech : "";
+
+        return (
+          <div class="bg-bg rounded-xl p-5 hover:shadow-md transition-shadow flex flex-col">
+            <div class="flex items-start gap-2 mb-2">
+              <i class="bi bi-folder text-primary mt-0.5" />
+              <h4 class="text-sm font-bold text-heading leading-snug">
+                {project.name}
+              </h4>
+            </div>
+            <p class="text-sm text-muted flex-1">{desc}</p>
+            {techStack && (
+              <div class="flex flex-wrap gap-1 mt-3">
+                {techStack.split(",").map((t) => (
+                  <span class="px-2 py-0.5 rounded text-xs bg-primary/5 text-primary font-medium">
+                    {t.trim()}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+---
+import resume from "@/data/resume";
+
+const { skills } = resume;
+
+const categoryIcons: Record<string, string> = {
+  Frontend: "bi-palette",
+  Backend: "bi-server",
+  "Platforms/Frameworks": "bi-grid-3x3-gap",
+  "Data/DBs": "bi-database",
+  "Tools/Infra": "bi-tools",
+  "IoT/Devices": "bi-cpu",
+  "Other Languages": "bi-code-square",
+};
+---
+
+<section id="skills" class="section bg-bg">
+  <div class="container mx-auto px-4">
+    <div class="section-title">
+      <h2>Skills</h2>
+      <p>Technologies and tools I work with</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+      {skills.map((category) => (
+        <div class="bg-white rounded-xl p-5 hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-2 mb-3">
+            <i class={`bi ${categoryIcons[category.name] ?? "bi-lightning"} text-primary text-lg`} />
+            <h4 class="text-sm font-bold text-heading">{category.name}</h4>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            {category.keywords.map((kw) => (
+              <span class="px-2.5 py-1 rounded-md text-xs font-medium bg-primary/5 text-heading border border-primary/10 hover:bg-primary/10 transition-colors">
+                {kw}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

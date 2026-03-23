@@ -1,0 +1,103 @@
+---
+import resume from "@/data/resume";
+
+const { work } = resume;
+const INITIAL_COUNT = 2;
+
+function formatDate(dateStr: string): string {
+  if (!dateStr) return "Present";
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  return d.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+}
+---
+
+<section id="experience" class="section bg-white">
+  <div class="container mx-auto px-4">
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p>Professional journey and key accomplishments</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <div class="relative border-l-2 border-primary/20 ml-4">
+        {work.map((job, i) => (
+          <div
+            class:list={[
+              "relative pl-8 pb-10 last:pb-0 group exp-item",
+              i >= INITIAL_COUNT && "hidden",
+            ]}
+            data-exp-index={i}
+          >
+            {/* Timeline dot */}
+            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary border-2 border-white shadow-sm group-hover:scale-125 transition-transform" />
+
+            <div class="bg-bg rounded-xl p-5 hover:shadow-md transition-shadow">
+              <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <h4 class="text-base font-bold text-heading">{job.position}</h4>
+                <span class="text-xs text-muted font-medium">
+                  {formatDate(job.startDate)} — {formatDate(job.endDate)}
+                </span>
+              </div>
+              <p class="text-sm font-medium text-primary mb-1">{job.name}</p>
+              {job.summary && (
+                <p class="text-xs text-muted italic mb-2">{job.summary}</p>
+              )}
+              {job.highlights.length > 0 && (
+                <ul class="space-y-1">
+                  {job.highlights.map((h) => (
+                    <li class="text-sm text-muted flex gap-2">
+                      <span class="text-primary mt-1 shrink-0">-</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {work.length > INITIAL_COUNT && (
+        <div class="text-center mt-6">
+          <button
+            id="exp-toggle"
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors cursor-pointer"
+          >
+            <span>Show {work.length - INITIAL_COUNT} more roles</span>
+            <i class="bi bi-chevron-down text-xs transition-transform duration-300"></i>
+          </button>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<script>
+  function initExpToggle() {
+    const btn = document.getElementById("exp-toggle");
+    if (!btn) return;
+
+    let expanded = false;
+
+    btn.addEventListener("click", () => {
+      expanded = !expanded;
+      const items = document.querySelectorAll<HTMLElement>(".exp-item");
+      const icon = btn.querySelector("i");
+      const label = btn.querySelector("span");
+
+      items.forEach((item) => {
+        const index = Number(item.dataset.expIndex);
+        if (index >= 2) {
+          item.classList.toggle("hidden", !expanded);
+        }
+      });
+
+      if (icon) icon.style.transform = expanded ? "rotate(180deg)" : "";
+      if (label) label.textContent = expanded ? "Show less" : `Show ${items.length - 2} more roles`;
+    });
+  }
+
+  initExpToggle();
+  document.addEventListener("astro:after-swap", initExpToggle);
+</script>

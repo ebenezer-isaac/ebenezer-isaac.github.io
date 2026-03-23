@@ -1,0 +1,21 @@
+services:
+  portfolio:
+    container_name: portfolio
+    image: ghcr.io/ebenezer-isaac/portfolio:latest
+    restart: unless-stopped
+    networks:
+      - server-network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128M
+
+networks:
+  server-network:
+    external: true
