@@ -9,21 +9,19 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/portfolio
+  IMAGE_NAME: ghcr.io/ebenezer-isaac/portfolio
 
 jobs:
-  build-and-deploy:
-    runs-on: self-hosted
+  build-and-push:
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
 
@@ -38,12 +36,10 @@ jobs:
         env:
           LLMC_API_KEY: ${{ secrets.LLMC_API_KEY }}
 
+      - uses: docker/setup-buildx-action@v3
+
       - name: Login to GHCR
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -51,12 +47,37 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.IMAGE_NAME }}:latest
+            ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          cache-from: type=gha,scope=portfolio
+          cache-to: type=gha,mode=max,scope=portfolio
 
-      - name: Deploy to server
+  deploy:
+    needs: build-and-push
+    runs-on: self-hosted
+    steps:
+      - name: Login to GHCR on self-hosted runner
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Pull latest image
+        run: docker pull ${{ env.IMAGE_NAME }}:latest
+
+      - name: Deploy portfolio
         run: |
           cd ~/projects/portfolio
-          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
           docker compose up -d --force-recreate
           echo "Deployed successfully"
+
+      - name: Health check
+        run: |
+          sleep 5
+          health=$(docker inspect --format='{{.State.Health.Status}}' portfolio 2>/dev/null || echo "unknown")
+          echo "Portfolio health: $health"
+          if [ "$health" != "healthy" ]; then
+            echo "--- Portfolio logs ---"
+            docker logs portfolio --tail 20 2>&1 || true
+          fi
+
+      - name: Cleanup
+        if: always()
+        run: docker image prune -f
