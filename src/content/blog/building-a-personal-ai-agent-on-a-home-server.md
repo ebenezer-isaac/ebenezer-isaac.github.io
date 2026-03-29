@@ -3,7 +3,7 @@ title: "Building a Personal AI Agent on a Home Server"
 date: 2026-03-29
 tags: ["ai", "devops", "architecture", "home-lab"]
 excerpt: "How I set up a personal AI assistant running Claude on my home server, accessible from anywhere via Tailscale and Discord — and what I learned along the way."
-draft: true
+draft: false
 ---
 
 Most AI assistants live in the cloud, which means your data travels through someone else's servers, your context resets after every session, and your agent can't touch anything on your actual machine. I wanted something different: an assistant that knows my environment, persists memory across conversations, and can actually act on my infrastructure.
