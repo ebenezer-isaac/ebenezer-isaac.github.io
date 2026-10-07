@@ -119,7 +119,7 @@ async function fetchResume(): Promise<Resume> {
 /** Render resume to PDF via llmconveyors API and return base64 */
 async function renderCvPdf(resumeData: Resume): Promise<string | null> {
   if (!LLMC_API_KEY) {
-    console.warn("[resume] LLMC_API_KEY not set — skipping PDF render");
+    console.warn("[resume] LLMC_API_KEY not set, skipping PDF render");
     return null;
   }
 

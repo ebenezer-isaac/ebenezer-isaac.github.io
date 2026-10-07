@@ -2,7 +2,7 @@
 title: "Building a Personal AI Agent on a Home Server"
 date: 2026-03-29
 tags: ["ai", "devops", "architecture", "home-lab"]
-excerpt: "How I set up a personal AI assistant running Claude on my home server, accessible from anywhere via Tailscale and Discord — and what I learned along the way."
+excerpt: "How I set up a personal AI assistant running Claude on my home server, accessible from anywhere via Tailscale and Discord, and what I learned along the way."
 draft: false
 ---
 
