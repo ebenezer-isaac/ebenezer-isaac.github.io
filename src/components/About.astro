@@ -5,7 +5,7 @@ const { basics, education, languages } = resume;
 const latestEdu = education[0];
 
 const facts = [
-  { icon: "bi-mortarboard", label: "Degree", value: `${latestEdu?.studyType} ${latestEdu?.area?.split(" ").slice(0, 3).join(" ")}` },
+  { icon: "bi-mortarboard", label: "Degree", value: `${latestEdu?.studyType}, ${latestEdu?.institution}` },
   { icon: "bi-geo-alt", label: "Location", value: `${basics.location.city}, ${basics.location.countryCode}` },
   { icon: "bi-envelope", label: "Email", value: basics.email, href: `mailto:${basics.email}` },
   { icon: "bi-telephone", label: "Phone", value: basics.phone, href: `tel:${basics.phone.replace(/\s/g, "")}` },
