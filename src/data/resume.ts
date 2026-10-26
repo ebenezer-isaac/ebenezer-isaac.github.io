@@ -95,11 +95,8 @@ export const ResumeSchema = z.object({
 export type Resume = z.infer<typeof ResumeSchema>;
 
 const GIST_ID = "3522bc50e00bc9f10976002a56f9abc2";
-const LLMC_API = "https://api.llmconveyors.com/api/v1";
-const LLMC_API_KEY = import.meta.env.LLMC_API_KEY ?? "";
-const CV_THEME = "academic";
 
-async function fetchResume(): Promise<Resume> {
+async function fetchGistResume(): Promise<unknown> {
   const response = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
     headers: {
       Accept: "application/vnd.github.v3+json",
@@ -112,72 +109,40 @@ async function fetchResume(): Promise<Resume> {
   }
 
   const gist = await response.json();
-  const raw = JSON.parse(gist.files["resume.json"].content);
-  return ResumeSchema.parse(raw);
+  return JSON.parse(gist.files["resume.json"].content);
 }
 
-/** Render resume to PDF via llmconveyors API and return base64 */
-async function renderCvPdf(resumeData: Resume): Promise<string | null> {
-  if (!LLMC_API_KEY) {
-    console.warn("[resume] LLMC_API_KEY not set, skipping PDF render");
-    return null;
-  }
-
-  const response = await fetch(`${LLMC_API}/resume/render`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": LLMC_API_KEY,
-    },
-    body: JSON.stringify({ resume: resumeData, theme: CV_THEME, format: "pdf" }),
-  });
-
-  if (!response.ok) {
-    console.error(`[resume] PDF render failed: ${response.status}`);
-    return null;
-  }
-
-  const result = await response.json();
-  if (!result.success) {
-    console.error(`[resume] PDF render error: ${result.error?.message}`);
-    return null;
-  }
-
-  return result.data.pdf;
-}
-
-/** Sync master resume to llmconveyors */
-async function syncMasterResume(resumeData: Resume): Promise<void> {
-  if (!LLMC_API_KEY) return;
-
+/** Render the gist to PDF with jsonresume-theme-academic; returns null so the committed PDF stays if Chrome is unavailable */
+async function renderCvPdf(rawResume: unknown): Promise<Buffer | null> {
   try {
-    await fetch(`${LLMC_API}/resume/master`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": LLMC_API_KEY,
-      },
-      body: JSON.stringify({ resume: resumeData, label: "Portfolio Master" }),
-    });
-    console.log("[resume] Master resume synced to llmconveyors");
+    const { render, pdfRenderOptions } = await import("jsonresume-theme-academic");
+    const { default: puppeteer } = await import("puppeteer");
+    // --no-sandbox: Ubuntu 24.04 runners block Chrome's user-namespace sandbox; the page is our own CV
+    const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+    try {
+      const page = await browser.newPage();
+      await page.setContent(render(rawResume), { waitUntil: "load", timeout: 90_000 });
+      await page.evaluate(() => document.fonts.ready);
+      return Buffer.from(await page.pdf({ ...pdfRenderOptions, printBackground: true }));
+    } finally {
+      await browser.close();
+    }
   } catch (e) {
-    console.warn("[resume] Failed to sync master resume:", e);
+    console.warn("[resume] PDF render failed, keeping the committed PDF:", e);
+    return null;
   }
 }
 
-const resume = await fetchResume();
+// The raw gist goes to the theme: the schema below drops fields it does not know, such as meta.headings
+const rawResume = await fetchGistResume();
+const resume = ResumeSchema.parse(rawResume);
 
-// At build time: render PDF and sync to llmconveyors
-const cvPdfBase64 = await renderCvPdf(resume);
-if (cvPdfBase64) {
+const pdfBuffer = await renderCvPdf(rawResume);
+if (pdfBuffer) {
   const { writeFileSync } = await import("node:fs");
   const { resolve } = await import("node:path");
-  const pdfBuffer = Buffer.from(cvPdfBase64, "base64");
   writeFileSync(resolve("public/ebenezer_cv.pdf"), pdfBuffer);
   console.log(`[resume] CV PDF rendered (${(pdfBuffer.length / 1024).toFixed(0)} KB)`);
 }
 
-await syncMasterResume(resume);
-
 export default resume;
-export { CV_THEME };
